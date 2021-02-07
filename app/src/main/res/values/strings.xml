@@ -7,4 +7,6 @@
     <string name="search">Search</string>
     <string name="exit">Exit</string>
     <string name="about">About</string>
+    <string name="name">Name</string>
+    <string name="nickname">NickName</string>
 </resources>
