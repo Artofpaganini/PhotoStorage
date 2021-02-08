@@ -7,9 +7,10 @@
     tools:context=".detail.DetailScreenFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout"
+        android:id="@+id/column_account_info"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -18,12 +19,12 @@
             android:id="@+id/user_image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="250dp"
-            android:layout_marginBottom="10dp"
-            android:src="@mipmap/ic_launcher"
+            android:layout_marginStart="@dimen/dp_20"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/button_shape"
+            android:src="@drawable/ic_avatar"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -31,44 +32,50 @@
             android:id="@+id/user_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="180dp"
+            android:layout_marginStart="@dimen/dp_20"
+            android:layout_marginTop="10dp"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
             android:text="@string/name"
             android:textSize="20sp"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/user_image"
-            app:layout_constraintTop_toTopOf="@+id/user_image" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/user_nickname"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
             android:text="@string/nickname"
             android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="@+id/user_image"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="@+id/user_name"
             app:layout_constraintTop_toBottomOf="@+id/user_name" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout2"
+        android:id="@+id/column_account_actions"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+        app:layout_constraintTop_toBottomOf="@+id/column_account_info">
 
         <ImageButton
             android:id="@+id/like_heart"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_20"
             android:layout_marginTop="10dp"
-            android:layout_marginEnd="250dp"
             android:layout_marginBottom="10dp"
-            android:src="@mipmap/ic_launcher_round"
+            android:background="@drawable/button_shape"
+            android:src="@drawable/ic_like"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -77,57 +84,100 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/dp_20"
-            android:src="@mipmap/ic_launcher"
+            android:background="@drawable/button_shape"
+            android:src="@drawable/ic_add"
             app:layout_constraintBottom_toBottomOf="@+id/like_heart"
             app:layout_constraintStart_toEndOf="@+id/like_heart"
             app:layout_constraintTop_toTopOf="@+id/like_heart" />
 
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dp_20"
+            android:background="@drawable/button_shape"
+            android:text="Download"
+            app:layout_constraintBottom_toBottomOf="@+id/add_photo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/add_photo" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout3"
+        android:id="@+id/column_photo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
+        app:layout_constraintTop_toBottomOf="@+id/column_account_actions">
+
+        <ImageView
+            android:id="@+id/photo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_launcher"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/column_other_actions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/column_photo"
+        tools:layout_editor_absoluteY="148dp">
 
         <ImageButton
             android:id="@+id/share_photo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:src="@mipmap/ic_launcher_round"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_marginEnd="@dimen/dp_20"
+            android:background="@drawable/button_shape"
+            android:src="@drawable/ic_share"
+            app:layout_constraintBottom_toBottomOf="@+id/info_about_photo"
+            app:layout_constraintEnd_toStartOf="@+id/info_about_photo"
+            app:layout_constraintTop_toTopOf="@+id/info_about_photo" />
 
         <ImageButton
             android:id="@+id/info_about_photo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/dp_20"
-
-            android:src="@mipmap/ic_launcher"
-            app:layout_constraintBottom_toBottomOf="@+id/share_photo"
-            app:layout_constraintStart_toEndOf="@+id/share_photo"
-            app:layout_constraintTop_toTopOf="@+id/share_photo" />
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="@dimen/dp_20"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/button_shape"
+            android:src="@drawable/ic_info"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <TextView
+        android:id="@+id/related_photo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Related Photo"
+        android:textSize="20sp"
+        android:layout_marginTop="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/column_other_actions" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/related_photo_rv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="@dimen/dp_20"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout3" />
+        app:layout_constraintTop_toBottomOf="@+id/related_photo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

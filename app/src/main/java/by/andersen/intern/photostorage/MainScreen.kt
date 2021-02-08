@@ -1,10 +1,13 @@
 package by.andersen.intern.photostorage
 
+import android.app.SearchManager
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
+import androidx.core.view.MenuItemCompat
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
@@ -41,6 +44,13 @@ class MainScreen : AppCompatActivity() {
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu, menu)
+        val searchView =
+            MenuItemCompat.getActionView(menu?.findItem(R.id.search)) as androidx.appcompat.widget.SearchView
+        val searchManager = getSystemService(SEARCH_SERVICE) as SearchManager
+        searchView.setSearchableInfo(searchManager.getSearchableInfo(componentName))
+        val menuIcon = ContextCompat.getDrawable(applicationContext, R.drawable.ic_menu)
+
+        menu!!.getItem(0).icon = menuIcon
         return true
     }
 

@@ -23,5 +23,4 @@ class DetailScreenFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_detail_screen, container, false)
     }
 
-
 }
