@@ -1,4 +1,4 @@
-package by.andersen.intern.photostorage.presentation.util
+package by.andersen.intern.photostorage.presentation.start.util
 
 import android.content.Context
 import android.view.LayoutInflater

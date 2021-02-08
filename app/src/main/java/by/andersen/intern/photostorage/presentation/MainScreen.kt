@@ -1,4 +1,4 @@
-package by.andersen.intern.photostorage
+package by.andersen.intern.photostorage.presentation
 
 import android.app.SearchManager
 import android.os.Bundle
@@ -6,11 +6,11 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
 import androidx.core.view.MenuItemCompat
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
+import by.andersen.intern.photostorage.R
 import by.andersen.intern.photostorage.databinding.ActivityMainBinding
 
 

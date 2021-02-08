@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="by.andersen.intern.photostorage">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".BaseApplication"
         android:allowBackup="true"
@@ -10,7 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PhotoStorageLight">
-        <activity android:name=".MainScreen">
+        <activity android:name=".presentation.MainScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

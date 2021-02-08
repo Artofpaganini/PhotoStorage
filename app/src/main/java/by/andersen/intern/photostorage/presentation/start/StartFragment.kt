@@ -1,4 +1,4 @@
-package by.andersen.intern.photostorage
+package by.andersen.intern.photostorage.presentation.start
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,8 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
-import by.andersen.intern.photostorage.presentation.util.PhotoAdapter
-import by.andersen.intern.photostorage.presentation.util.PhotoItem
+import by.andersen.intern.photostorage.R
+import by.andersen.intern.photostorage.presentation.start.util.PhotoAdapter
+import by.andersen.intern.photostorage.presentation.start.util.PhotoItem
 
 class StartFragment : Fragment() {
     private lateinit var recyclerView: RecyclerView
