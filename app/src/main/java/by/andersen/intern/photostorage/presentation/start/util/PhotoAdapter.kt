@@ -11,8 +11,13 @@ import by.andersen.intern.photostorage.R
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CircleCrop
 
-class PhotoAdapter(private val dataSet: ArrayList<PhotoItem>) :
+class PhotoAdapter(private var dataSet: ArrayList<PhotoItem>) :
     RecyclerView.Adapter<PhotoAdapter.ViewHolder>() {
+
+    fun setDataSet(listPhotos: ArrayList<PhotoItem>) {
+        this.dataSet = listPhotos
+        notifyDataSetChanged()
+    }
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         private val userName: TextView
